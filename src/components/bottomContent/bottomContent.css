@@ -1,3 +1,7 @@
 .card:hover {
     background-color: #ccc;
 }
+
+.far {
+    color: #4CAF50;
+}

@@ -59,7 +59,7 @@ export default function MainContent() {
         );
     }
 
-    function sendAlert(e) {
+    function updateCountry(e) {
         //alert(e.target.value);        
         //console.log(e.target.value.split(' '));
         let country = e.target.value.split('*');
@@ -67,13 +67,13 @@ export default function MainContent() {
     }
 
     return (
-        <div className="m-3" id='covid-country' style={{ border: "dotted 2px black" }}>
+        <div className="p-3" id='covid-country' style={{ border: "dotted 2px black" }}>
             <h2>Covid-19 in {country.country}</h2>
-            <select className="form-control" defaultValue={'DEFAULT'} onChange={sendAlert}>
+            <select className="form-control" defaultValue={'DEFAULT'} onChange={updateCountry}>
                 <option disabled value="DEFAULT" >Select country</option>
                 {
                     allCountries.map((country, i) => {
-                        if (country.iso3 != undefined) {
+                        if (country.iso3 !== undefined) {
                             return <option key={i + country} value={country.iso3 + '*' + country.name}> {country.name} </option>
                         }
                     })
