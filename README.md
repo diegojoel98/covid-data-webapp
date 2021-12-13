@@ -1,3 +1,9 @@
+# Covid-19 Data Webapp
+## Covid-19 in the world (confirmed, deaths)
+### Covid-19 in countries (confirmed, deaths)
+### Daily summary sort by country
+### Data source: https://github.com/mathdroid/covid19
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
