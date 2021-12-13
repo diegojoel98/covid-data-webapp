@@ -1,0 +1,67 @@
+.circle-wrap {
+    margin: 15px auto;
+    width: 200px;
+    height: 200px;
+    background: #fefcff;
+    border-radius: 50%;
+    border: 1px solid #cdcbd0;
+}
+
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+    clip: rect(0px, 200px, 200px, 75px);
+}
+
+.circle-wrap .inside-circle {
+    width: 178px;
+    height: 178px;
+    border-radius: 50%;
+    background: #d2eaf1;
+    line-height: 185px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #1e51dc;
+    position: absolute;
+    z-index: 100;
+    font-weight: 700;
+    font-size: 2em;
+  }
+
+div.circle div.inside-circle-red {
+  color: #FF5252;
+}
+  
+  /* color animation */
+  
+  /* 3rd progress bar */
+  .mask, .mask-red, .fill, .fill-red {
+    clip: rect(0px, 75px, 150px, 0px);
+    background-color: #227ded;
+  }
+
+  .fill-red, .mask-red {
+      background-color: #FF5252;
+  }
+  
+  .mask.full,
+  .circle .fill, .fill-red {
+    animation: fill ease-in-out 3s;
+    transform: rotate(135deg);
+  }
+  
+  @keyframes fill{
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(135deg);
+    }
+  }
