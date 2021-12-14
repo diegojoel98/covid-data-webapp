@@ -91,7 +91,7 @@ export default function MainContent() {
                 </div>
             </div>
 
-            <Link to={`/${country.countryISO}/region`}>
+            <Link to={`/covid-data-webapp/${country.countryISO}/region`}>
                 <button className='btn btn-success mb-3'>View regions in {country.country}</button>
             </Link>
             <p className='text-left text-muted'>Last Update: {dataCountry.lastUpdate}</p>

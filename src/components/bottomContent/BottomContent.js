@@ -117,7 +117,7 @@ export default function BottomContent() {
                         })
                     }
                 </div>
-                <Link to="/daily-summary-all-regions"><button className='btn btn-success mb-3'>View all regions</button></Link>
+                <Link to="/covid-data-webapp/daily-summary-all-regions"><button className='btn btn-success mb-3'>View all regions</button></Link>
             </div>
         </div>
     )
