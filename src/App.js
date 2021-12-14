@@ -13,9 +13,9 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/:region/region" element={<MainContentRegion />} />
-        <Route path="/daily-summary-all-regions" element={<BottomContent />} />
+        <Route path="/covid-data-webapp" exact element={<Home />} />
+        <Route path="/covid-data-webapp/:region/region" element={<MainContentRegion />} />
+        <Route path="/covid-data-webapp/daily-summary-all-regions" element={<BottomContent />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
 
