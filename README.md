@@ -1,7 +1,8 @@
 # Covid-19 Data Webapp
 ### Covid-19 in the world (confirmed, deaths)
-### Covid-19 in countries (confirmed, deaths)
-### Daily summary sort by country
+### Covid-19 in countries (confirmed, deaths and regions in countries)
+### Daily summary sort by regions (all regions available)
+### Live project: https://diegojoel98.github.io/covid-data-webapp/
 ### Data source: https://github.com/mathdroid/covid19
 
 # Getting Started with Create React App
