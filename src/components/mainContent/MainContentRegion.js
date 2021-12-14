@@ -51,6 +51,7 @@ export default function MainContentRegion() {
                                     <div className="card" style={{ width: "18rem" }}>
                                         <div className="card-body">
                                             <h5 className="card-title">{province.provinceState}</h5>
+                                            <p className='text-muted'>{province.conbinedKey}</p>
                                             <h6 className="card-subtitle mb-2 text-left"><i className="fas fa-head-side-cough mr-1"></i>Active: {province.active}</h6>
                                             <h6 className="card-subtitle mb-2 text-left"><i className="fas fa-clipboard-list mr-1"></i> Confirmed: {province.confirmed}</h6>
                                             <h6 className="card-subtitle mb-2 text-left"><i className="fas fa-cross mr-1"></i> Deaths: {province.deaths}</h6>
