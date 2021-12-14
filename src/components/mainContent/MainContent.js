@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './mainContent.css';
 
 export default function MainContent() {
@@ -53,7 +54,7 @@ export default function MainContent() {
     // end fetching data
     if (loading) {
         return (
-            <div className="spinner-border text-primary" role="status">
+            <div className="spinner-border text-danger" role="status">
                 <span className="sr-only">Loading...</span>
             </div>
         );
@@ -82,12 +83,16 @@ export default function MainContent() {
             <div className='container mt-3'>
                 <div className='row'>
                     <div className='col-md-6'>
-                        <p className='item-main-content'> <i className="fas fa-head-side-cough mr-2"></i> Confirmed: {dataCountry.confirmed}</p>
+                        <p className='item-main-content'> <i className="fas fa-user-times mr-2"></i> Confirmed: {dataCountry.confirmed}</p>
                     </div>
                     <div className='col-md-6'>
                         <p className='item-main-content'> <i className="fas fa-clinic-medical mr-2"></i> Deaths: {dataCountry.deaths}</p></div>
                 </div>
             </div>
+
+            <Link to={`/${country.countryISO}/region`}>
+                <button className='btn btn-success mb-3'>View regions in {country.country}</button>
+            </Link>
             <p className='text-left text-muted'>Last Update: {dataCountry.lastUpdate}</p>
         </div>
     )

@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="container-fluid p-3" style={{ backgroundColor: "#C8E6C9" }}>
             <div className="row">
                 <div className="col-12 col-md-4">
-                    <i className="fas fa-database"></i> <b>Data source:</b> <a className='text-dark' href={data.source} target="_blank">{data.source}</a>
+                    <i className="fas fa-database"></i> <b>Data source:</b> <a className='text-dark' href={data.source} target="_blank" rel="noreferrer">{data.source}</a>
                 </div>
                 <div className="col-12 col-md-4">
                     <i className="fas fa-address-book"></i> <b>Contact me: </b> dgongoragamboa@gmail.com

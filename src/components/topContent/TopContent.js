@@ -3,7 +3,7 @@ import './topContent.css';
 
 export default function TopContent() {
     // useState, dataCovid and variable loading
-    const [dataCovid, setDataCovid] = useState({ confirmed: 0, deaths: 0 });
+    const [dataCovid, setDataCovid] = useState({ confirmed: 0, deaths: 0, lastUpdate: '' });
     const [loading, setLoading] = useState(true);
 
     // fetching data
@@ -16,7 +16,7 @@ export default function TopContent() {
                 throw res;
             })
             .then(data => {
-                setDataCovid({ confirmed: data.confirmed.value, deaths: data.deaths.value });
+                setDataCovid({ confirmed: data.confirmed.value, deaths: data.deaths.value, lastUpdate: data.lastUpdate });
             })
             .catch(err => {
                 console.error("Error fetching the data: ", err);
@@ -29,7 +29,7 @@ export default function TopContent() {
     // end fetching
     if (loading) {
         return (
-            <div className="spinner-border text-primary" role="status">
+            <div className="spinner-border text-primary mt-2" role="status">
                 <span className="sr-only">Loading...</span>
             </div>
         );
@@ -69,6 +69,7 @@ export default function TopContent() {
                         </div>
                     </div>
                 </div>
+                <p className='text-muted text-left'>Last Update: {dataCovid.lastUpdate}</p>
             </div>
         </div>
     )

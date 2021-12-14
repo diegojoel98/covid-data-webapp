@@ -10,13 +10,32 @@
 }
 
 .fas {
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 .fa-head-side-cough {
+    color: #b0b8e7;
+}
+.fa-user-times {
     color: #1e51dc;
 }
 
-.fa-clinic-medical {
-    color: #FF5252;
+.fa-clinic-medical, .fa-cross {
+    color: #ff5252cb;
+}
+
+.fa-calendar-times {
+    color: #ee4747ad
+}
+
+.fa-clipboard-list {
+    color: #4de2598c;
+}
+
+.fa-calendar-alt {
+    color: #dfe24d8a;
+}
+
+.fa-chart-line {
+    color: #ee4747ad;
 }

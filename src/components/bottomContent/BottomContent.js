@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './bottomContent.css';
 
 export default function BottomContent() {
+
+    // check for url
+    let home = true;
+    if (window.location.href.includes("all-regions")) {
+        home = false;
+    }
 
     // date variables
     let todayDate = new Date(Date.now() - 86400000); // 1 day - 1000 * 60 * 60 * 24
@@ -48,8 +55,11 @@ export default function BottomContent() {
     // end fetching daily data
     if (loading) {
         return (
-            <div className="spinner-border text-primary" role="status">
-                <span className="sr-only">Loading...</span>
+            <div className='mt-2'>
+                <div className="spinner-border text-success" role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
+                <p>There are a lot of regions 😅</p>
             </div>
         );
     }
@@ -60,7 +70,7 @@ export default function BottomContent() {
     }
 
     return (
-        <div className="p-3" id='daily-summary' style={{ border: "dotted 2px black" }}>
+        <div className="p-3" id='daily-summary'>
             <h2>Daily Summary</h2>
             <p><i className="far fa-calendar-alt"></i> Today: {new Date().toDateString()}</p>
             <select defaultValue={'DEFAULT'} className="form-control form-control-sm" onChange={updateDate}>
@@ -75,7 +85,21 @@ export default function BottomContent() {
                 <div className='row'>
                     {
                         dailyData.data.map((region, i) => {
-                            if (i < 6) {
+                            if (home && i < 6) {
+                                return (
+                                    <div className='col-sm-6 col-md-3 col-lg-4' key={i + region.combinedKey}>
+                                        <div className="card mb-3">
+                                            <p className="text-center"> Region: <b>{region.combinedKey}</b></p>
+                                            <p className="text-left p-2"> Confirmed: {region.confirmed}</p>
+                                            <p className="text-left p-2"> Deaths: {region.deaths}</p>
+                                            <p className="text-left p-2" title="Is determined by taking the total number of new cases of an event and dividing that by the sum of the person-time of the at-risk population."> Incident Rate: {parseFloat(region.incidentRate).toFixed(2)}</p>
+                                            <p className="text-left p-2" title="Is the ratio between confirmed deaths and confirmed cases."> Case Fatality Ratio: {parseFloat(region.caseFatalityRatio).toFixed(2)}</p>
+                                            <p className="text-left text-muted"> Last Update: {region.lastUpdate}</p>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                            if (!home) {
                                 return (
                                     <div className='col-sm-6 col-md-3 col-lg-4' key={i + region.combinedKey}>
                                         <div className="card mb-3">
@@ -92,7 +116,7 @@ export default function BottomContent() {
                         })
                     }
                 </div>
-                <button className='btn btn-success mb-3'>View More</button>
+                <Link to="/daily-summary-all-regions"><button className='btn btn-success mb-3'>View all regions</button></Link>
             </div>
         </div>
     )
