@@ -71,6 +71,7 @@ export default function BottomContent() {
 
     return (
         <div className="p-3" id='daily-summary'>
+            <hr />
             <h2>Daily Summary</h2>
             <p><i className="far fa-calendar-alt"></i> Today: {new Date().toDateString()}</p>
             <select defaultValue={'DEFAULT'} className="form-control form-control-sm" onChange={updateDate}>

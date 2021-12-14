@@ -68,7 +68,8 @@ export default function MainContent() {
     }
 
     return (
-        <div className="p-3" id='covid-country' style={{ border: "dotted 2px black" }}>
+        <div className="p-3" id='covid-country'>
+            <hr />
             <h2>Covid-19 in {country.country}</h2>
             <select className="form-control" defaultValue={'DEFAULT'} onChange={updateCountry}>
                 <option disabled value="DEFAULT" >Select country</option>

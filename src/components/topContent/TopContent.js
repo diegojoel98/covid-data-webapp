@@ -36,7 +36,7 @@ export default function TopContent() {
     }
 
     return (
-        <div className='m-2' id='covid-world' style={{ border: "dotted 2px black" }}>
+        <div className='m-2' id='covid-world'>
             <h1 className="title-section mt-3">Covid-19 in the World</h1>
             <div className="container">
                 <div className="row">
